@@ -311,7 +311,6 @@ FeaturePlot(sub, features = phagocyte_markers)
 
 ###unbiased way to find subcluster markers
 sub.markers <- FindAllMarkers(sub, only.pos = T, min.pct = .25, logfc.threshold = 0)
-# write.csv(sub.markers, "G:/.shortcut-targets-by-id/1d1S_Tpnk3gFjNVrvVi2QWzl0o0BtDwzP/KH/KH-22/DEG_analysis/Macrophages/Mac_variable_genes_upregulated-only.csv")
 sub.markers %>% 
   group_by(cluster) %>% 
   top_n(n = 10, wt = avg_log2FC) -> topmarkers
